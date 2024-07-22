@@ -3,8 +3,9 @@ from aiogram.filters import CommandStart, Command, CommandObject
 from aiogram.types import Message
 import redis
 import asyncio
+from config import REDIS_HOST, REDIS_PORT
 
-r = redis.Redis(host="127.0.0.1", port=6379, db=0)
+r = redis.Redis(host=REDIS_HOST, port=int(REDIS_PORT), db=0)
 router = Router()
 
 @router.message(CommandStart())

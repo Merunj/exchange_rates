@@ -2,7 +2,7 @@ import aiohttp
 import xml.etree.ElementTree as ET
 import redis
 import asyncio
-
+from config import REDIS_HOST, REDIS_PORT
 url = "https://cbr.ru/scripts/XML_daily.asp"
 
 async def fetch_currency_rates():
@@ -20,7 +20,7 @@ def parse_currency_rates(xml_data):
     return rates
 
 def save_rates_to_redis(rates):
-    r = redis.Redis(host='127.0.0.1', port='6379')
+    r = redis.Redis(host=REDIS_HOST, port=int(REDIS_PORT), db=0)
     for code, rate in rates.items():
         r.set(code, rate)
 
