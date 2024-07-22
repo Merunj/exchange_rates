@@ -1,3 +1,2 @@
-TOKEN = 'YOUR_TOKEN'
-REDIS_HOST = "YOUR_REDIS_HOST"
-REDIS_PORT = "YOUR_REDIS_PORT"
+TOKEN = '7161203091:AAFty3FeQrW8oLpt5tdCb_VQzC6Xr3n-RWw'
+url = 'https://cbr.ru/scripts/XML_daily.asp'
